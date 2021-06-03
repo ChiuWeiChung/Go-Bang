@@ -1,0 +1,188 @@
+
+
+.container {
+    width: 80%;
+    min-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: start;
+}
+
+.modal{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    transition: all 0.2s ease-in-out;
+    background-color: #d5c5c4a6;
+    z-index: 9999;
+    text-align: center;
+    line-height: 13;
+    font-size: 36px;
+}
+
+.show{
+    width: 100%;
+    height: 100%;
+}
+
+.gameboard{
+    background-color: antiquewhite;
+    margin: 0 0 0 50px;
+    position: relative;
+    box-sizing: border-box;
+    width: 543px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.recordboard{
+    text-align: left;
+    width: 250px;
+    padding-left: 25px;
+    border-radius: 5px;
+    background: #9cd5db;
+}
+.recordboard .restart {
+    margin-top: 20px;
+    height: 40PX;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0px 0px 1px 1px;
+    color: #e8e8e8;
+    background-color: #51585f;
+}
+
+
+.recordboard div{
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.recordboard .turn{
+    width: 180px;
+}
+
+.recordboard .turn .player{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.recordboard .turn div{
+    display: inline-block;
+}
+
+
+h1{
+    text-align: center;
+    margin: 3px auto 3px auto;
+    font-size: 30px;
+}
+
+.loc{
+    background-color: rgb(223, 183, 6);
+    width: 28.5px;
+    height: 28.5px;
+    position: relative;
+}
+
+.loc::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 48%;
+    width: 100%;
+    height: 2%;
+    background-color: black;
+    z-index: 2000;
+}
+.loc::after{
+    content: "";
+    position: absolute;
+    left: 48%;
+    width: 2%;
+    height: 100%;
+    background-color: black;
+    z-index: 2000;
+} 
+
+.edge{
+    position: absolute;
+    background-color: rgb(223, 183, 6);
+}
+.left {
+    width: 3.01%;
+    top: 2.95%;
+    height: 94.1%;
+    border-right: 1px solid black;
+    border-left: 2px solid black;
+    box-sizing: border-box;
+    z-index: 3001;
+}
+.right {
+    z-index: 3001;
+    width: 3.01%;
+    top: 2.95%;
+    right: 0;
+    height: 94.1%;
+    border-left: 1px solid black;
+    border-right: 2px solid black;
+    box-sizing: border-box;
+}
+.top {
+    z-index: 3000;
+    width: 100%;
+    box-sizing: border-box;
+    height: 3.02%;
+    border-bottom: 1px solid black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.bottom {
+    z-index: 3000;
+    width: 100%;
+    bottom: 0;
+    height: 3.01%;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    box-sizing: border-box;
+}
+
+
+
+.blackdot {
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    left: 30%;
+    top: 30%;
+    background-color: rgb(65, 62, 62);
+    border-radius: 50%;
+    z-index: 5000;
+}
+
+.white {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 9998;
+}
+
+.black {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background-color: rgb(49, 44, 44);
+    z-index: 9998;
+    border-radius: 50%;
+}
