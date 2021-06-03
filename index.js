@@ -13,7 +13,7 @@ class Gobang {
         this.goLocation = Array(361);
         this.player = { turn: 'black' };
         player.childNodes[1].classList.add(this.player.turn);
-        modal.textContent="";
+        modal.textContent = "";
         for (let i = 1; i < 362; i++) {
             let div = document.createElement('div');
             div.classList.add('loc');
@@ -47,7 +47,7 @@ class Gobang {
             modal.classList.add('show');
             modal.textContent = `${this.player.turn} WIN`.toUpperCase();
             this.score[this.player.turn]++;
-            document.querySelector(`.${this.player.turn}_score`).textContent= `${this.player.turn.toUpperCase()} SCORE:${this.score[this.player.turn]}`;
+            document.querySelector(`.${this.player.turn}_score`).textContent = `${this.player.turn.toUpperCase()} SCORE:${this.score[this.player.turn]}`;
             return
         }
         player.childNodes[1].classList.remove(this.player.turn);
@@ -61,29 +61,57 @@ class Gobang {
 
     checkWinner(i, player) {
         const winArr = [1, 18, 19, 20]
-        const score = [];
-        winArr.forEach(el => {
+        let isWin = null
+
+        for (let item of winArr) {
             let chain = 1;
-            let prev = i - el;
-            let next = i + el;
+            let prev = i - item;
+            let next = i + item;
             while ((this.goLocation[prev] === player || this.goLocation[next] === player) && chain < 5) {
                 if (this.goLocation[prev]) {
                     chain++;
-                    prev -= el;
+                    prev -= item;
                 } else {
                     prev = undefined
                 }
                 if (this.goLocation[next]) {
                     chain++;
-                    next += el;
+                    next += item;
                 } else {
                     next = undefined
                 }
             }
-            score.push(chain)
-        })
-        if (score.includes(5)) return player;
-        return null
+            if (chain === 5) {
+                isWin=true;
+                break
+            }
+        }
+
+        return isWin
+
+
+        // winArr.forEach(el => {
+        //     let chain = 1;
+        //     let prev = i - el;
+        //     let next = i + el;
+        //     while ((this.goLocation[prev] === player || this.goLocation[next] === player) && chain < 5) {
+        //         if (this.goLocation[prev]) {
+        //             chain++;
+        //             prev -= el;
+        //         } else {
+        //             prev = undefined
+        //         }
+        //         if (this.goLocation[next]) {
+        //             chain++;
+        //             next += el;
+        //         } else {
+        //             next = undefined
+        //         }
+        //     }
+        //     score.push(chain)
+        // })
+        // if (score.includes(5)) return player;
+        // return null
     }
 
 
