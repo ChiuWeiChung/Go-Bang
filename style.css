@@ -96,10 +96,10 @@ body {
     display: inline-block;
 }
 
-h1 {
+.title {
     text-align: center;
     margin: 3px auto 3px auto;
-    font-size: 30px;
+    font-size: 2.5rem;
 }
 
 .loc {
@@ -113,7 +113,8 @@ h1 {
     content: "";
     position: absolute;
     left: 0;
-    top: 48%;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
     height: 2%;
     background-color: black;
@@ -123,7 +124,8 @@ h1 {
 .loc::after {
     content: "";
     position: absolute;
-    left: 48%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 2%;
     height: 100%;
     background-color: black;
