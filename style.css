@@ -39,18 +39,14 @@ body {
     margin: 0 auto;
     position: relative;
     box-sizing: border-box;
-    width: 35rem;
-    height: 35rem;
+    width: 24rem;
+    height: 24rem;
     display: flex;
     flex-wrap: wrap;
 }
 
 .recordboard {
     width: 90%;
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
     margin: 0 auto;
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -139,7 +135,7 @@ h1 {
     width: calc(100% / 38);
     top: calc(100% /38);
     height: calc(100% / 19 * 18);
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
     border-left: 2px solid black;
     box-sizing: border-box;
     z-index: 3001;
@@ -151,7 +147,7 @@ h1 {
     top: calc(100% /38);
     right: 0;
     height: calc(100% / 19 * 18);
-    border-left: 1px solid black;
+    /* border-left: 1px solid black; */
     border-right: 2px solid black;
     box-sizing: border-box;
 }
@@ -218,35 +214,30 @@ h1 {
 
 @media(max-width:768px) {
     html {
-        font-size: 75%;
+        font-size: 85%;
     }
     .container {
         width: 100%;
     }
+
     .recordboard {
         flex-direction: column;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        padding: 0;
     }
-    .recordboard * {
-        margin: .5rem;
+    .recordboard .restart {
+        margin: 1rem 0;
     }
 }
 
 @media(max-width:576px) {
     html {
-        font-size: 60%;
+        font-size: 80%;
     }
-    /* .recordboard {
-        
-    } */
 }
 
-@media(max-width:426px) {
-    .gameboard {
-        width: 40rem;
-        height: 40rem;
-    }
+/* @media(max-width:426px) {
     html {
-        font-size: 50%;
+        font-size: 75%;
     }
-}
+} */
