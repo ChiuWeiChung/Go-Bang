@@ -1,14 +1,23 @@
 
+html{
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    background-image: linear-gradient( 45deg, black, transparent);
+    overflow: hidden;
+}
 
 .container {
     width: 80%;
-    min-width: 1000px;
+    /* min-width: 1000px; */
     margin: auto;
-    display: flex;
-    justify-content: start;
 }
 
-.modal{
+.modal {
     position: absolute;
     width: 0%;
     height: 0%;
@@ -20,73 +29,87 @@
     font-size: 36px;
 }
 
-.show{
+.show {
     width: 100%;
     height: 100%;
 }
 
-.gameboard{
+.gameboard {
     background-color: antiquewhite;
-    margin: 0 0 0 50px;
+    margin: 0 auto;
     position: relative;
     box-sizing: border-box;
-    width: 543px;
+    width: 35rem;
+    height: 35rem;
     display: flex;
     flex-wrap: wrap;
 }
-.recordboard{
-    text-align: left;
-    width: 250px;
-    padding-left: 25px;
-    border-radius: 5px;
-    background: #9cd5db;
+
+.recordboard {
+    width: 90%;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    background: #4e84d5;
+    color: #e0ecee;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
+
 .recordboard .restart {
-    margin-top: 20px;
-    height: 40PX;
+    height: 3rem;
     cursor: pointer;
-    border-radius: 8px;
-    box-shadow: 0px 0px 1px 1px;
+    border: none;
+    border-radius: 1rem;
     color: #e8e8e8;
-    background-color: #51585f;
+    background-color: #4cc333;
+    letter-spacing: .5rem;
+    box-shadow: 0 1px 4px #0000009e;
+    transition: all .3s;
+    font-size: inherit;
 }
 
-
-.recordboard div{
-    margin-top: 20px;
-    font-size: 24px;
+.recordboard .restart:hover {
+    transform: scale(1.1);
 }
 
-.recordboard .turn{
-    width: 180px;
+.recordboard .turn {
+    display: flex;
+    align-items: center;
 }
 
-.recordboard .turn .player{
+.recordboard .turn .player {
     position: relative;
     width: 50px;
     height: 50px;
     display: inline-block;
 }
 
-.recordboard .turn div{
+.recordboard .turn div {
     display: inline-block;
 }
 
-
-h1{
+h1 {
     text-align: center;
     margin: 3px auto 3px auto;
     font-size: 30px;
 }
 
-.loc{
+.loc {
     background-color: rgb(223, 183, 6);
-    width: 28.5px;
-    height: 28.5px;
+    width: calc(100% / 19);
+    height: calc(100% / 19);
     position: relative;
 }
 
-.loc::before{
+.loc::before {
     content: "";
     position: absolute;
     left: 0;
@@ -96,7 +119,8 @@ h1{
     background-color: black;
     z-index: 2000;
 }
-.loc::after{
+
+.loc::after {
     content: "";
     position: absolute;
     left: 48%;
@@ -104,37 +128,39 @@ h1{
     height: 100%;
     background-color: black;
     z-index: 2000;
-} 
+}
 
-.edge{
+.edge {
     position: absolute;
     background-color: rgb(223, 183, 6);
 }
+
 .left {
-    width: 3.01%;
-    top: 2.95%;
-    height: 94.1%;
+    width: calc(100% / 38);
+    top: calc(100% /38);
+    height: calc(100% / 19 * 18);
     border-right: 1px solid black;
     border-left: 2px solid black;
     box-sizing: border-box;
     z-index: 3001;
 }
+
 .right {
     z-index: 3001;
-    width: 3.01%;
-    top: 2.95%;
+    width: calc(100% / 38);
+    top: calc(100% /38);
     right: 0;
-    height: 94.1%;
+    height: calc(100% / 19 * 18);
     border-left: 1px solid black;
     border-right: 2px solid black;
     box-sizing: border-box;
 }
+
 .top {
     z-index: 3000;
     width: 100%;
     box-sizing: border-box;
-    height: 3.02%;
-    border-bottom: 1px solid black;
+    height: calc(100% / 38);
     border-top: 2px solid black;
     border-left: 2px solid black;
     border-right: 2px solid black;
@@ -144,15 +170,12 @@ h1{
     z-index: 3000;
     width: 100%;
     bottom: 0;
-    height: 3.01%;
-    border-top: 1px solid black;
+    height: calc(100% / 38);
     border-bottom: 2px solid black;
     border-left: 2px solid black;
     border-right: 2px solid black;
     box-sizing: border-box;
 }
-
-
 
 .blackdot {
     position: absolute;
@@ -185,4 +208,45 @@ h1{
     background-color: rgb(49, 44, 44);
     z-index: 9998;
     border-radius: 50%;
+}
+
+@media(max-width:1024px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: 75%;
+    }
+    .container {
+        width: 100%;
+    }
+    .recordboard {
+        flex-direction: column;
+        font-size: 2.5rem;
+    }
+    .recordboard * {
+        margin: .5rem;
+    }
+}
+
+@media(max-width:576px) {
+    html {
+        font-size: 60%;
+    }
+    /* .recordboard {
+        
+    } */
+}
+
+@media(max-width:426px) {
+    .gameboard {
+        width: 40rem;
+        height: 40rem;
+    }
+    html {
+        font-size: 50%;
+    }
 }

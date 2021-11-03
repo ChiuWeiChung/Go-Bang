@@ -47,22 +47,18 @@ class Gobang {
             modal.classList.add('show');
             modal.textContent = `${this.player.turn} WIN`.toUpperCase();
             this.score[this.player.turn]++;
-            document.querySelector(`.${this.player.turn}_score`).textContent = `${this.player.turn.toUpperCase()} SCORE:${this.score[this.player.turn]}`;
+            document.querySelector(`.${this.player.turn}_score`).textContent = `${this.player.turn.toUpperCase()} Score: ${this.score[this.player.turn]}`;
             return
         }
         player.childNodes[1].classList.remove(this.player.turn);
         this.player.turn = this.player.turn === 'white' ? 'black' : 'white';
         player.childNodes[1].classList.add(this.player.turn);
-
-
-
     }
 
 
     checkWinner(i, player) {
         const winArr = [1, 18, 19, 20]
         let isWin = null
-
         for (let item of winArr) {
             let chain = 1;
             let prev = i - item;
@@ -88,30 +84,6 @@ class Gobang {
         }
 
         return isWin
-
-
-        // winArr.forEach(el => {
-        //     let chain = 1;
-        //     let prev = i - el;
-        //     let next = i + el;
-        //     while ((this.goLocation[prev] === player || this.goLocation[next] === player) && chain < 5) {
-        //         if (this.goLocation[prev]) {
-        //             chain++;
-        //             prev -= el;
-        //         } else {
-        //             prev = undefined
-        //         }
-        //         if (this.goLocation[next]) {
-        //             chain++;
-        //             next += el;
-        //         } else {
-        //             next = undefined
-        //         }
-        //     }
-        //     score.push(chain)
-        // })
-        // if (score.includes(5)) return player;
-        // return null
     }
 
 
