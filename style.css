@@ -107,6 +107,7 @@ body {
     width: calc(100% / 19);
     height: calc(100% / 19);
     position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .loc::before {
