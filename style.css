@@ -116,7 +116,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    height: 2%;
+    height: 2px;
     background-color: black;
     z-index: 2000;
 }
@@ -126,7 +126,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 2%;
+    width: 2px;
     height: 100%;
     background-color: black;
     z-index: 2000;
@@ -212,6 +212,13 @@ body {
     border-radius: 50%;
 }
 
+
+@media(min-width:1440px) {
+   .gameboard{
+       width: 40rem;
+       height: 40rem;
+   }
+}
 @media(max-width:768px) {
     html {
         font-size: 90%;
